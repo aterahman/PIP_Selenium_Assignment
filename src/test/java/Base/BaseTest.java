@@ -22,11 +22,11 @@ public class BaseTest
     public static ExtentReports report;
 
     //setting up the driver before entering the test class
-    @BeforeSuite
+    @BeforeTest
     public void SetUpDriver()
     {
         ChromeOptions options = new ChromeOptions();
-        options.setHeadless(true);
+        options.setHeadless(false);
 
         System.setProperty("webdriver.chrome.driver","src\\main\\resources\\chromedriver.exe");
         driver = new ChromeDriver(options);
@@ -34,7 +34,7 @@ public class BaseTest
     }
 
     //creating extent report
-    @BeforeSuite
+    @BeforeTest
     public static void startreport()
     {
         String date = new SimpleDateFormat("dd-MM-YYYY-HH-mm-ss").format(new java.util.Date());
@@ -60,14 +60,14 @@ public class BaseTest
     }
 
     //closing reporter
-    @AfterSuite
+    @AfterTest
     public static void endTest()
     {
         report.flush();
     }
 
     //closing driver after test class
-    @AfterSuite
+    @AfterTest
     public void QuitDriver()
     {
      log.info("Closing driver");
