@@ -4,7 +4,7 @@
     <listeners>
         <listener class-name="Utils.testnglistener"></listener>
     </listeners>
-    <test verbose="2" preserve-order="true" name="C:/Users/aterahman/IdeaProjects/PIP_Selenium_Assignment/src/test">
+    <test name="Full Test">
         <classes>
             <class name="TestCases.HomePageTests"></class>
             <class name="TestCases.JacketsPageTests">
@@ -28,4 +28,38 @@
             <class name="TestCases.CheckoutTests"></class>
         </classes>
     </test>
+    <test name="Only Hotseller count Test">
+        <classes>
+            <class name="TestCases.HomePageTests"></class>
+        </classes>
+    </test>
+    <test name="Only Filter and Comparison test">
+        <classes>
+            <class name="TestCases.JacketsPageTests">
+                <methods>
+                    <include name="GoToJacketsPageTest"></include>
+                    <include name="ApplyFiltersTest"></include>
+                    <include name="AddFirstJacketToCompare"></include>
+                    <include name="AddLastJacketToCompare"></include>
+                    <include name="ValidateCompareList"></include>
+                    <include name="ClearFiltersandComparisonsTest"></include>
+                    <exclude name="AddToCartTest"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Only expensive item and checkout test">
+        <classes>
+            <class name="TestCases.JacketsPageTests">
+                <methods>
+                    <include name="GoToJacketsPageTest"></include>
+                    <include name="AddToCartTest"></include>
+                </methods>
+            </class>
+            <class name="TestCases.ExpensiveItemTests">
+            </class>
+            <class name="TestCases.CheckoutTests"></class>
+        </classes>
+    </test>
 </suite>
+
