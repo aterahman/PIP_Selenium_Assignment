@@ -225,7 +225,12 @@ public class JacketPageEvents
 
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-            elementFetch.GetWebElement(By.cssSelector(".action-primary.action-accept")).click();
+            //gets the web element for the alert that is shown when clearing comparison list
+            WebElement confirm_comparison_clearance = elementFetch.GetWebElement(By.cssSelector(".action-primary.action-accept"));
+
+            wait.until(ExpectedConditions.visibilityOf(confirm_comparison_clearance));
+
+            confirm_comparison_clearance.click();
 
             driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
