@@ -30,7 +30,7 @@ public class BaseTest
     }
 
     //creating extent report
-    @BeforeClass
+    @BeforeSuite
     public static void startreport()
     {
         String date = new SimpleDateFormat("dd-MM-YYYY-HH-mm-ss").format(new java.util.Date());
@@ -56,7 +56,7 @@ public class BaseTest
     }
 
     //closing reporter
-    @AfterClass
+    @AfterSuite
     public static void endTest()
     {
         report.flush();
