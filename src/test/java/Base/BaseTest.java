@@ -6,6 +6,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 
 import java.text.SimpleDateFormat;
@@ -24,8 +25,11 @@ public class BaseTest
     @BeforeSuite
     public void SetUpDriver()
     {
+        ChromeOptions options = new ChromeOptions();
+        options.setHeadless(true);
+
         System.setProperty("webdriver.chrome.driver","src\\main\\resources\\chromedriver.exe");
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         log.info("Driver is set up");
     }
 
