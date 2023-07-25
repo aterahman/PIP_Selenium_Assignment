@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="Utils.testnglistener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="C:/Users/aterahman/IdeaProjects/PIP_Selenium_Assignment/src/test">
+        <classes>
+            <class name="TestCases.HomePageTests"></class>
+            <class name="TestCases.JacketsPageTests">
+                <methods>
+                    <include name="GoToJacketsPageTest"></include>
+                    <include name="ApplyFiltersTest"></include>
+                    <include name="AddFirstJacketToCompare"></include>
+                    <include name="AddLastJacketToCompare"></include>
+                    <include name="ValidateCompareList"></include>
+                    <include name="ClearFiltersandComparisonsTest"></include>
+                </methods>
+            </class>
+            <class name="TestCases.JacketsPageTests">
+                    <methods>
+                        <include name="GoToJacketsPageTest"></include>
+                        <include name="AddToCartTest"></include>
+                    </methods>
+            </class>
+            <class name="TestCases.ExpensiveItemTests">
+            </class>
+            <class name="TestCases.CheckoutTests"></class>
+        </classes>
+    </test>
+</suite>
