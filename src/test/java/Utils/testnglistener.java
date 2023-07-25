@@ -24,6 +24,15 @@ public class testnglistener  implements ITestListener
         BaseTest.log.info("PASSED TEST "+result);
 
         BaseTest.test.log(Status.PASS,"Passed test"+result);
+
+        try
+        {
+            takingscreenshot.getscreenshotfortestpass();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     @Override
